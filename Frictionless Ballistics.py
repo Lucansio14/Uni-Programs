@@ -35,9 +35,9 @@ Created on Mon Sep 18 13:23:46 2020
 # Gravity at Earth's surface: $g=9.8$
 # 
 # Gravity at Moon's surface: $g=1.6$
-#main_program
 import numpy as np
 import matplotlib.pyplot as plt
+#main_program
 def projectile(x0=0,y0=0,m=0.3,F=500,tc=0.01,theta=30,g=9.8):
     v0=(F/m)*tc
     v0x=v0*np.cos(np.radians(theta))#x component of initial velocity
