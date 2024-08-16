@@ -4,11 +4,12 @@ Created on Tue Aug 22 18:29:42 2023
 Is *blank* a Prime Number? (Method 1)
 @author: Lucas Romero Fernández
 """
-from timeit import timeit
+import time
 import sys
 #main_program
+start_time_program=time.process_time()#To calculate the program execution time
 reclimit=5000#This value increases the recursion limit (default: 1000). For bigger numbers, this value has to increase (with caution, may lead to crash).
-sys.setrecursionlimit(reclimit)
+sys.setrecursionlimit(reclimit)#Recursion limit
 def Prime(num,n=2):
     if n>=num:
         print(num,"is a prime number.")
@@ -22,6 +23,6 @@ number=abs(int(input("What number/integer do you want to check if it is a prime 
 print("")
 Prime(number)
 print("")
-print("Program execution time:",timeit(number=1),"seconds.")
+print("Program execution time:",time.process_time()-start_time_program,"seconds.")
 print("")
 print("Goodbye.")
