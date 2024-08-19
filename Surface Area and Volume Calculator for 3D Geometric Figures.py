@@ -5,12 +5,13 @@ Surface Area and Volume Calculator for 3D Geometric Figures
 @author: Lucas Romero Fernández
 """
 #All units in International System units (S.I.) (for example) to avoid confusion.
-#main_program
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+import sys
+#main_program
 FigAvailable={1:"Parallelepiped",2:"Sphere",3:"Circular cylinder",4:"Arbitrary cylinder (no figure due to arbitrariness)",5:"Right circular cone",6:"Pyramid of arbitrary base (only volume and no figure due to arbitrariness)",7:"Spherical cap (in a sphere)",8:"Frustrum of a right circular cone",9:"Spherical triangle (no figure)",10:"Ring torus",11:"Ellipsoid (only volume)",12:"Paraboloid of revolution (only volume)"}
-print("*Beware that all units of the variables have to be cohesive (for example, all expressed in the International System units (S.I.)) to avoid confusion and all values given by the user will be considered positive (except angles), all of this with the purpose of obtaining coherent results.*")
+print("*Beware that all units of the variables have to be cohesive (for example, all expressed in the International System units (S.I.)) to avoid confusion and all values given by the user will be considered positive (except angles), all of this with the purpose of obtaining coherent results. Also, for ease of calculus, a vertex of the figure (or, in specific cases, the center of the figure) always coincides with the origin of coordinates (0,0,0).*")
 print("")
 print("3D geometric figures available: ")
 print("")
@@ -168,6 +169,8 @@ while True:
         radiSphCap=abs(float(input("Radius of the sphere that includes the spherical cap? ")))
         print("")
         heightSphCap=abs(float(input("Height of the spherical cap? ")))
+        if heightSphCap>2*radiSphCap:
+            sys.exit("The height of the spherical cap cannot be bigger than two times the radius (the diameter, in other words) of the sphere that includes the spherical cap...")
         print("")
         surfareaSphCap=2*np.pi*radiSphCap*heightSphCap
         volSphCap=(1/3)*np.pi*(heightSphCap**2)*(3*radiSphCap-heightSphCap)
