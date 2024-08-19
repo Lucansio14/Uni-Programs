@@ -253,7 +253,7 @@ class Ellipse(Shape):
         plt.tight_layout()
         plt.show()
 FigAvailable={1:"Parallelogram",2:"Triangle",3:"Trapezoid",4:"Regular polygon",5:"Circle",6:"Circular sector",7:"Circle inscribed in a triangle (to calculate radius of that circle)",8:"Circle circumscribed by a triangle (to calculate radius of that circle)",9:"Regular polygon inscribed in a circle",10:"Regular polygon circumscribed by a circle",11:"Circle segment (specifically, the region of a disk which is *cut off* from the rest of the disk by a straight line)",12:"Parabolic segment",13:"Ellipse"}
-print("*Beware that all units of the variables have to be cohesive (for example, all expressed in the International System units (S.I.)) to avoid confusion and all values given by the user will be considered positive (except angles), all of this with the purpose of obtaining coherent results.*")
+print("*Beware that all units of the variables have to be cohesive (for example, all expressed in the International System units (S.I.)) to avoid confusion and all values given by the user will be considered positive (except angles), all of this with the purpose of obtaining coherent results. Also, for ease of calculus, a vertex of the figure (or, in specific cases, the center of the figure) always coincides with the origin of coordinates (0,0,0).*")
 print("")
 print("Flat geometric figures available: ")
 print("")
