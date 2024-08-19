@@ -23,7 +23,7 @@ def square_root_BM(x):#Babylonian method
         r=1/2*((x/r)+r)
     return r*v
 def square_root_SQRT(x):#sqrt method
-    return np.emath.sqrt(n)#np.emath is used instead of something more normal like cmath.sqrt is to not show the imaginary part when it is not needed...
+    return np.emath.sqrt(n)#np.emath is used instead of something more normal like cmath because it is better not to show the imaginary part when it is not needed...
 #For the timeit module
 square_root_BM_string='''
 def square_root_BM(x):
