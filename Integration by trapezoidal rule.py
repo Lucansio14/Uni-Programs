@@ -61,7 +61,7 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 #Results of the integrations
-#Note:"().evalf()" is used when using SymPy in f(x) to always print a numerical (sometimes, approximated) value, no matter the complexity of the result...
+#Note:"().evalf()" is put when using SymPy in f(x) to always print a numerical (sometimes, very approximated) value, no matter the complexity of the result...
 print("Value of the numerical integration with SymPy =",(I_exact).evalf())#Result of the numerical integration with SymPy
 print("")
 print("Value of the numerical integration by trapezoidal rule =",(I).evalf())#Result of the numerical integration by trapezoidal rule
