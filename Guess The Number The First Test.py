@@ -1,6 +1,6 @@
 """
 Created on Wed Oct 9 13:57:44 2019
-
+Guess The Number The First Test (small game)
 @author: Lucas Romero Fernández
 """
 import random
