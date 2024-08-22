@@ -46,7 +46,7 @@ f_array=np.array(f_list,dtype=float)
 f_exact_array=np.array(f_exact_list,dtype=float)
 fx0_array=np.full(num,f_array[0],dtype=float)#Horizontal line of value f_array[0] for filling under the graph
 #Graph
-fig=plt.figure(figsize=(9,5))
+plt.figure(figsize=(9,5))
 plt.plot(x_array,f_array,marker="d",color="orange",label="Trapezoidal rule")
 plt.plot(x_exact_array,f_exact_array,color="black",label="f(x)")
 plt.hlines(f_array[0],x_array[0],x_array[-1],color="black",linestyle="dashed",alpha=0.6)
