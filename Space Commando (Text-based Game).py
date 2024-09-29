@@ -9,7 +9,8 @@ from random import randrange
 import sys
 import time
 import matplotlib.pyplot as plt
-NumOptions=0
+#Definition of options variables and functions of the different scenarios of the game
+NumOptions=0#To show the 'dice rolls'/numbers generated of the player and enemies in encounters
 def Persuasion(p):
     x=random()
     y="You are good at getting what you want with diplomacy, you are a very eloquent person (+30 Persuasion)."
@@ -417,7 +418,8 @@ def Objects3(x):
     elif x<0.90 and x>0.55:
         i=0.1
         return y,i,0,0
-#main program
+#main_program
+#Introduction
 print("Hello! Welcome to my game SPACE COMMANDO, I am writing this to give you a few instructions that can help you during the game:")
 print("")
 print("1-SPACE COMMANDO is a game where luck and randomness are important factors, so there will be playthroughs where everything seems lost and unfair.")
@@ -522,6 +524,7 @@ while True:
             print("Understood, if you are going to be a nuisance, it is better for you to not proceed.")
             print("")
             sys.exit("GAME OVER. Reason: Subject stupidness.")
+#The game proper
 t1=time.time()
 print("On the way to the ship, you wonder why they have entrusted such an important mission to a beginner like you and why they hired you in the first place, you have not done any type of training or preparation with them before this.")
 print("")
@@ -606,6 +609,7 @@ print("")
 lw+=1
 print("----->CONGRATULATIONS! YOU HAVE COMPLETED SPACE COMMANDO!<-------")
 print("")
+#Postgame
 t2=time.time()
 print("Duration of the playthrough =",t2-t1,"seconds.")
 print("")
