@@ -22,11 +22,11 @@ b=30#Length of the ellipse semi-minor axis (units=mm)
 xA=-30#x-coordinate of left point (units=mm)
 yA=0#y-coordinate of both points (units=mm)
 N=301#Number of points in the x-axis
-#Vectors of evenly spaced x-values between -a and +a and corresponding optical path length.
+#Vectors of evenly spaced x-values between -a and +a and corresponding optical path length
 x_vec=np.linspace(-a,a,N)
 L_vec=L(x_vec,a,b,xA,yA)
 #Plot
-#L (with respect to alpha) vs x.
+#L (with respect to alpha) vs x
 plt.figure(figsize=(8,10))
 plt.plot(x_vec,L_vec,'ok',markersize=3)
 plt.axvline(-a,color="blue",linestyle="dashed",alpha=0.7,label=r'$-a,+a$')
