@@ -4,7 +4,7 @@ Created on Mon Sep 30 13:15:23 2024
 Optical path length of a ray that undergoes reflection at the inside part of a spherical mirror.
 Context: At the inside part of a spherical mirror, considering n=1 (refraction index equals 1 (void)) 
 and an homogenous medium, a light ray coming from point A, with coordinates (xA,yA), bounces off the 
-mirror's surface and passes through point B, with coordinates (−xA, yA).
+mirror's surface and passes through point B, with coordinates (−xA,yA).
 Example of spherical mirror: https://avantierinc.com/wp-content/uploads/2024/02/Figure-2.-Pole-of-Spherical-Mirrors-768x343.png
 @author: Lucas Romero Fernández
 """
