@@ -21,10 +21,10 @@ R=50#Mirror radius (units=mm)
 xA=-30#x-coordinate of left point (units=mm)
 yA=10#y-coordinate of both points (units=mm)
 N=301#Number of points in the x-axis
-#Vectors of evenly spaced x-values between -R and +R and corresponding optical path length.
+#Vectors of evenly spaced x-values between -R and +R and corresponding optical path length
 x_vec=np.linspace(-R,R,N)
 L_vec=L(x_vec,R,xA,yA)
-#To calculate the incidence and reflection angles.
+#To calculate the incidence and reflection angles
 aA=np.sqrt((x_vec-xA)**2+(y(R,x_vec)-yA)**2)
 aB=np.sqrt((x_vec+xA)**2+(y(R,x_vec)-yA)**2)
 b=R
@@ -32,7 +32,7 @@ c=np.sqrt(xA**2+yA**2)
 thetai_vec=np.arccos((aA**2+b**2-c**2)/(2*aA*b))#Incidence angle
 thetat_vec=np.arccos((aB**2+b**2-c**2)/(2*aB*b))#Reflection angle
 #Plots
-#L (with respect to alpha) vs x.
+#L (with respect to alpha) vs x
 plt.figure(figsize=(8,10))
 plt.subplot(2,1,1)
 plt.plot(x_vec,L_vec,'ok',markersize=3)
@@ -44,7 +44,7 @@ plt.title(r'Optical path length at the inside part of a spherical mirror ($x_A$ 
 plt.grid()
 plt.legend()
 plt.tight_layout()
-#Incidence and reflection angles vs x.
+#Incidence and reflection angles vs x
 plt.subplot(2,1,2)
 plt.plot(x_vec,thetai_vec,"-k",label=r'$\theta_i$')
 plt.plot(x_vec,thetat_vec,"-r",label=r'$\theta_t$')
