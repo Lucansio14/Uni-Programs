@@ -30,7 +30,7 @@ for i in range(0,len(Ram_pi_list)):#Error between methods
     error_Ram_pi_list.append(abs(numpy_pi-Ram_pi_list[i]))
 iterations_list=np.arange(0,n+1,1)#For the graphs
 #Graphs
-#Approximations of the number pi vs number of iterations
+#Approximations of the number pi vs n
 plt.figure(figsize=(9,5))
 plt.plot(iterations_list,Ram_pi_list,c='red')
 plt.axhline(numpy_pi,color="black",linestyle="dashed",alpha=0.7,label="NumPy pi")
@@ -44,7 +44,7 @@ plt.legend()
 plt.grid()
 plt.tight_layout()
 plt.show()
-#Error of the method vs number of iterations
+#Error of the method vs n
 plt.figure(figsize=(9,5))
 plt.plot(iterations_list,error_Ram_pi_list,c='red')
 plt.title("Error of the Ramanujan series")
