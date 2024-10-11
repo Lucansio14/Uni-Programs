@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Sep 23 11:37:23 2021
-Calculate an aproximation of the number pi by using a variation of the Archimedes method.
+Calculate an approximation of the number pi by using a variation of the Archimedes method.
 More information about the method in this website: https://www.craig-wood.com/nick/articles/pi-archimedes/
 @author: Lucas Romero Fernández
 """
