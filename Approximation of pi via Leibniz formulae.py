@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep 28 21:19:31 2021
-Calculate an aproximation of the number pi by using the Leibniz formulae.
+Calculate an approximation of the number pi by using the Leibniz formulae.
 More information about the method in this website: https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80
 @author: Lucas Romero Fernández
 """
