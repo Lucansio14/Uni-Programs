@@ -12,7 +12,7 @@ import numpy as np
 start_time_program=time.process_time()#To calculate the program execution time
 #Definition of variables, constants and lists
 k=0#Summation index
-n=250#Summation upper bound, must be an integer
+n=250#Summation upper bound/number of iterations, must be an integer
 S_list=[]
 Leib_pi_list=[]
 error_Leib_pi_list=[]
