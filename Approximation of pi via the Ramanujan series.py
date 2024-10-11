@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Sep 29 12:08:35 2021
-Calculate an aproximation of the number pi by using the Ramanujan series.
+Calculate an approximation of the number pi by using the Ramanujan series.
 More information in this website: https://planetmath.org/ramanujansformulaforpi
 @author: Lucas Romero Fernández
 """
