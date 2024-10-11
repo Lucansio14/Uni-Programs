@@ -22,7 +22,6 @@ while k<=n:
     S=(math.factorial(4*k))*(1103+26390*k)/(((math.factorial(k))**(4))*(396)**(4*k))
     S_list.append(S)
     Ram_pi=(((2*np.sqrt(2))/9801)*sum(S_list))**(-1)
-    print(Ram_pi)
     Ram_pi_list.append(Ram_pi)
     k+=1
 #Main process of the obtainment of pi with NumPy
