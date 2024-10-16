@@ -14,7 +14,7 @@ x_values=[-1,0,1]#Values of x where the function is studied
 h=1#Value of the real and positive step size, must match the differences between the x values
 #Main process of the analytical obtainment of the first and second derivatives of a function at a point x0
 def pol_2order_an():
-    x=Symbol('x')
+    x=Symbol("x")
     a,b,c=symbols("a,b,c")
     d1=diff(a*x**(2)+b*x+c,x)
     d1_0=N(d1.subs(x,x0))
@@ -31,7 +31,7 @@ print("")
 c=float(input("Value of c: "))#As can be seen, this value does not affect the derivatives. Left here so it can be verified personally
 print("")
 def pol_2order_ex():
-    x=Symbol('x')
+    x=Symbol("x")
     d1=diff(a*x**(2)+b*x+c,x)
     d1_0=N(d1.subs(x,x0))
     d2=diff(d1)
