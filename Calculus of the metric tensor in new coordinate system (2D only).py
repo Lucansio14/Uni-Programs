@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct 16 18:15:01 2024
-Calculus of the metric tensor (g_ab_new) in new coordinate system (2D only), knowing, the metric tensor in 2D (g_ab) for the present/old coordinate system (optionally)
+Calculus of the metric tensor (g_ab_new) in new coordinate system (2D only) using two different methods, knowing, the metric tensor in 2D (g_ab) for the present/old coordinate system (x1 and x2)
 and the expressions of the old coordinates (xi1 and xi2) in respect of the new coordinates (x1 and x2), xi1(x1,x2) and xi2(x1,x2).
 More information about the method in this website: https://randomphysics.com/wp-content/uploads/2023/03/ferrari_gualtieri_general_relativity.pdf (Chapter 1)
 @author: Lucas Romero Fernández
