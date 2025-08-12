@@ -2,13 +2,13 @@
 """
 Created on Fri Mar 27 20:37:12 2020
 Integration by trapezoidal rule (Integrate a function by adding the areas of the trapezoids below the function) with uniform grid.
+More information about the method in this website: https://en.wikipedia.org/wiki/Trapezoidal_rule
 @author: Lucas Romero Fernández
 """
 import time
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sy
-#More information about the method in this website: https://en.wikipedia.org/wiki/Trapezoidal_rule
 #main_program
 #Definition of fixed variables
 start_time_program=time.process_time()#To calculate the program execution time
@@ -71,3 +71,4 @@ print("")
 print("Value of the absolute relative error =",(abs(((E_t)/(I_exact)))*100).evalf(),"%")#Result of the absolute relative error between methods
 print("")
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
