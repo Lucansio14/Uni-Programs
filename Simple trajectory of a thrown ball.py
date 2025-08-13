@@ -15,7 +15,7 @@ start_time_program=time.process_time()#To calculate the program execution time
 v0=25/6#Units: m/s. Has to be a positive value to obtain a trajectory for positive values of x.
 theta_deg=60#Units: degrees. Has to be a value in the interval [0,90] to obtain a trajectory for positive values of x.
 y0=100#Units: m. Has to be a positive value.
-g=9.8#Units: m/s. Note: Positive value because the minus sign is already considered in the expression.
+g=9.8#Units: m/s^2. Note: Positive value because the minus sign is already considered in the expression.
 n=1000#Number of points in the x-axis
 theta_rad=np.radians(theta_deg)
 x_max=(v0**2*(np.cos(theta_rad))**2*(np.tan(theta_rad)+np.sqrt((np.tan(theta_rad))**2+(2*g*y0)/(v0**2*(np.cos(theta_rad))**2))))/g#End of the trajectory (y = 0 for positive values of x)
@@ -38,4 +38,5 @@ plt.tight_layout()
 plt.show()
 print("Distance traveled by the ball:",x_max,"meters.")
 print("")
+
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
