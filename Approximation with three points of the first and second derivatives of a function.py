@@ -10,7 +10,6 @@ from sympy import *
 #main_program
 #Definition of lists and constants
 x0=0
-x_values=[-1,0,1]#Values of x where the function is studied
 h=1#Value of the real and positive step size, must match the differences between the x values
 #Main process of the analytical obtainment of the first and second derivatives of a function at a point x0
 def pol_2order_an():
@@ -43,3 +42,4 @@ def pol_2order_cal(x):#For the calculus of the approximations
 print("The values of the first and second derivatives of the second order polynomial function calculated analitically at the point x0 =",x0,"is, respectively,",float(pol_2order_ex()[0]),"and",float(pol_2order_ex()[1]))
 print("")
 print("The approximated values of the first and second derivatives of the second order polynomial function calculated numerically at the point x0 =",x0,"is, respectively,",(pol_2order_cal(1)-pol_2order_cal(-1))/(2*h),"and",(pol_2order_cal(1)-2*pol_2order_cal(0)+pol_2order_cal(-1))/(h**2))
+
