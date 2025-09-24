@@ -31,7 +31,7 @@ for h in h_list:
         return (np.tan(np.arctan(y0)+x-x0))
     def f(x,y):
         return ((y)**2+1)
-    #Simple Euler method of first order
+    #Simple Euler method of 1st order
     while x0<xf:
         y1=y0+h*f(x0,y0)
         y1_list.append(y1)
@@ -90,7 +90,4 @@ for h in h_list:
     plt.tight_layout()
     plt.show()
     n+=1
-
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
-
-
