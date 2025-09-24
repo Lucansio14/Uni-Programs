@@ -25,7 +25,7 @@ for h in h_list:
     y3_list=[y0]
     y4_list=[y0]
     analytical_sol_list=[]
-    def analytical_sol(x):#Specific analytical solution for the case of f(x,y)=y^2+1, for comparison reasons.
+    def analytical_sol(x):#Specific analytical solution for the case of f(x,y)=y^2+1, for comparison purposes.
         x0=0
         y0=0
         return (np.tan(np.arctan(y0)+x-x0))
@@ -92,4 +92,5 @@ for h in h_list:
     n+=1
 
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
 
