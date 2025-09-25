@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Oct 18 20:20:34 2021
-Solver of 1st Order Ordinary Differential Equations (ODEs): y'(x) = f(x,y) using Euler's different methods with different step sizes "h" in the region [x0,xf] in the x-axis with initial condition y0=y(x0).
+Solver of 1st Order Ordinary Differential Equations (ODEs): y'(x) = f(x,y) using Euler's different methods with different step sizes "h" in the region [x0,xf] in the x-axis with initial condition y0 = y(x0).
 More information on these websites: https://en.wikipedia.org/wiki/Euler_method#:~:text=The%20Euler%20method%20is%20a,proportional%20to%20the%20step%20size.
                                     https://www.maths.tcd.ie/~ryan/teaching/11404/March18_20_HigherOrderMethods.pdf
                                     https://math.libretexts.org/Courses/Monroe_Community_College/MTH_225_Differential_Equations/03%3A_Numerical_Methods/3.02%3A_The_Improved_Euler_Method_and_Related_Methods
@@ -91,3 +91,4 @@ for h in h_list:
     plt.show()
     n+=1
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
