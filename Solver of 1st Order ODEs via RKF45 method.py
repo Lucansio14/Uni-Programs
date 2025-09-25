@@ -58,7 +58,7 @@ while x0<=xf:
                 error_appr_list.append(error_appr)
                 analytical_sol_list.append(anal_sol)
                 error_sol_list.append(error_sol)
-                h_list.append(h)
+                h_list.append(h_new)
                 x_list.append(x0)
                 x0+=h
                 y0=y
@@ -113,4 +113,5 @@ plt.tight_layout()
 plt.show()
 
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
 
