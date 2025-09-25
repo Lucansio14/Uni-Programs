@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct  6 12:07:15 2021
+Created on Wed Oct 6 12:07:15 2021
 Solver of 1st Order Ordinary Differential Equations (ODEs): y'(x) = f(x,y) using the Runge-Kutta-Fehlberg method of 4th order with an error estimator
 of 5th order (RKF45) with an adaptive (or not) step size "h" in the region [x0,xf] in the x-axis with initial condition y0=y(x0).
 More information on this website: https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta%E2%80%93Fehlberg_method.
@@ -111,4 +111,5 @@ plt.title("Evolution of the step size")
 plt.grid()
 plt.tight_layout()
 plt.show()
+
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
