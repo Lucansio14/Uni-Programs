@@ -15,7 +15,8 @@ start_time_program=time.process_time()#To calculate the program execution time
 h0=0.1#Initial (or fixed) value of the step size
 h=h0
 max_error=10**(-6)#Maximum error to be considered in the equation's solution
-x0=1
+x0_init=1
+x0=x0_init
 y0=1
 xf=10
 h_list=[h]
@@ -78,7 +79,7 @@ while x0<=xf:
 #Graphs
 #Comparison between solutions
 plt.figure(figsize=(9,5))
-plt.xlim(1-h0,xf+h0)
+plt.xlim(x0_init-h0,xf+h0)
 plt.plot(x_list,y_list,c="red",label="RKF4")
 plt.plot(x_list,y_prime_list,c="green",label="RKF5")
 plt.scatter(x_list,analytical_sol_list,c="blue",s=30,label="Analytical solution")
@@ -91,7 +92,7 @@ plt.tight_layout()
 plt.show()
 #Errors of the RKF45 method
 plt.figure(figsize=(9,5))
-plt.xlim(1-h0,xf+h0)
+plt.xlim(x0_init-h0,xf+h0)
 plt.plot(x_list,error_appr_list,"-ro",label="Error between RKF4 and RKF5 solutions")
 plt.plot(x_list,error_sol_list,"-go",label="Error between RKF5 and analytical solutions")
 plt.xlabel("$x$")
@@ -103,7 +104,7 @@ plt.tight_layout()
 plt.show()
 #Evolution of the step size 'h'
 plt.figure(figsize=(9,5))
-plt.xlim(1-h0,xf+h0)
+plt.xlim(x0_init-h0,xf+h0)
 plt.plot(x_list,h_list,"-ro")
 plt.xlabel("$x$")
 plt.ylabel("$h$")
@@ -111,7 +112,4 @@ plt.title("Evolution of the step size")
 plt.grid()
 plt.tight_layout()
 plt.show()
-
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
-
-
