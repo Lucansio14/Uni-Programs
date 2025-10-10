@@ -2,7 +2,7 @@
 """
 Created on Thu Oct 7 11:23:54 2021
 Solver of 2nd Order Ordinary Differential Equations (ODEs): x'(t,v) = v(t,x) = f_1(t,x,v) and v'(t,x,v) = f_2(t,x,v) using the Runge-Kutta-Fehlberg method of 4th order with
-an error estimator of 5th order (RKF45) with an adaptive (or not) step size "h" in the region [t0,tf] in the t-axis with initial condition x0 = x(t0) and v0 = v(t0,x0).
+an error estimator of 5th order (RKF45) with an adaptive (or not) step size "h" in the region [t0,tf] in the t-axis with initial conditions x0 = x(t0) and v0 = v(t0,x0).
 More information on these websites: https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta%E2%80%93Fehlberg_method
                                     https://en.wikipedia.org/wiki/Van_der_Pol_oscillator
 @author: Lucas Romero Fernández
@@ -154,3 +154,4 @@ plt.tight_layout()
 plt.show()
 
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
