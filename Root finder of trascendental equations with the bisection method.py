@@ -46,28 +46,28 @@ def bisecroot(f,a,b,verbose=False):
     if f(a)*f(b)>0:#If f(a) and f(b) do not have different signs...
         print("f(a)=",f(a),"f(b)=",f(b))
         sys.exit("f(a) and f(b) must have different signs for the method to be succesful.")
-    old_posib_sol=a
+    old_possib_sol=a
     while True:
-        posib_sol=(a+b)/2.0
+        possib_sol=(a+b)/2.0
         if verbose==True: 
-            print("Trying with middle point:",posib_sol)
-        if f(posib_sol)==0 or posib_sol==old_posib_sol: 
+            print("Trying with middle point:",possib_sol)
+        if f(possib_sol)==0 or possib_sol==old_possib_sol: 
             if verbose==True:
-                if f(posib_sol)==0: 
-                    print("Valued zero",f(posib_sol))
+                if f(possib_sol)==0: 
+                    print("Valued zero",f(possib_sol))
                 else:
-                    print("Not changing",posib_sol,old_posib_sol)
+                    print("Not changing",possib_sol,old_possib_sol)
             break
-        if f(a)*f(posib_sol)<0: 
-            b=posib_sol#Solution is in the interval [a,m]
+        if f(a)*f(possib_sol)<0: 
+            b=possib_sol#Solution is in the interval [a,m]
             b_points_list.append(b)
             fb_points_list.append(f(b))
         else:
-            a=posib_sol#Solution is in the interval [m,b]
+            a=possib_sol#Solution is in the interval [m,b]
             a_points_list.append(a)
             fa_points_list.append(f(a))
-        old_posib_sol=posib_sol
-    return posib_sol
+        old_possib_sol=possib_sol
+    return possib_sol
 sol=bisecroot(f,a,b)
 x_sol=sol
 fx_sol=f(sol)
