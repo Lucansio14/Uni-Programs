@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #main_program
 start_time_program=time.process_time()#To calculate the program execution time
-#Definition of variables, constants, functions and lists
+#Definition of variables, constants, functions, arrays and lists
 i=0#Counter for the mode number
 h=0.0001#Step size of the Heun's method
 prec=10**(-6)#Precision to be considered in the equation's solution
