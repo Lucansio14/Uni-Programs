@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #main_program
 start_time_program=time.process_time()#To calculate the program execution time
-#Definition of variables, constants, functions and lists
+#Definition of variables, constants, functions, arrays and lists
 Num_Spatial_points=41#Number of numerical spatial grid points
 Time_Iter_list=[0,1,10,100,1000,2000,3000,4000]#Each time step (dt) iteration represented in the plots
 x0=0
@@ -101,4 +101,5 @@ for time_iter in Time_Iter_list:
     plt.grid()
     plt.tight_layout()
     plt.show()
+
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
