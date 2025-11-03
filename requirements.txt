@@ -9,7 +9,7 @@ packaging==25.0
 pillow==11.3.0
 pyparsing==3.2.3
 python-dateutil==2.9.0.post0
-scipy==1.16.1
+scipy==1.15.3
 simpy==4.1.1
 six==1.17.0
 IPython==8.30.0
@@ -17,3 +17,4 @@ jupyter_client==8.6.3
 jupyter_core==5.7.2
 jupyterlab==4.3.4
 notebook==7.3.2
+
