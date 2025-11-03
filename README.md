@@ -1,1 +1,1 @@
-This repository contains all the various and noteworthy short simple codes (in Python, Jupyter Notebook, and Mathematica) I have ever made while studying for my degree and future studies in Physics at the University of the Balearic Islands. Still a work in progress.
+This repository contains all the various and noteworthy short simple codes (in Python 3.13.5, Jupyter Notebook 7.4.5, and Mathematica 13.3) I have ever made while studying for my degree and future studies in Physics at the University of the Balearic Islands. Still a work in progress.
