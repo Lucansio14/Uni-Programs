@@ -17,4 +17,3 @@ jupyter_client==8.6.3
 jupyter_core==5.7.2
 jupyterlab==4.3.4
 notebook==7.3.2
-
