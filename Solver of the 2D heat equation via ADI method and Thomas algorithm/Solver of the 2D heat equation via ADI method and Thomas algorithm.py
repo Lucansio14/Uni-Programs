@@ -70,7 +70,7 @@ def ADI2(nu,R,S,u_substep_t_array):#Step 2 (substep 2 in time) of the ADI method
             u_substep_y_array[j]=1/2*nu*u_substep_t_array[j,i+1]+(1-nu)*u_substep_t_array[j,i]+1/2*nu*u_substep_t_array[j,i-1]
         u_substep_t_array[:,i]=Thomas(theta,nu,S,u_substep_y_array)
     return u_substep_t_array
-#Solution evolution and graphs for each time step iterations
+#Solution evolution and graph for each time step iteration
 Time_Iter=0
 while Time_Iter<=End_Time_Iter:
     u_array=ADI2(nu,R,S,ADI1(nu,R,S,u0_array))
