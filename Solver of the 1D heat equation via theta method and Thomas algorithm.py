@@ -61,7 +61,7 @@ def analytical_sol(t_array):#Specific analytical solution for the heat equation 
         x_list.append(x)
         x+=dx
     return (x_list,u_list)
-def Thomas(a_array,b_array,c_array,d_array):#Thomas or tridiagonal_matrix algorithm
+def Thomas(a_array,b_array,c_array,d_array):#Thomas or tridiagonal matrix algorithm
     e_array=np.zeros(Num_Spatial_points)
     f_array=np.zeros(Num_Spatial_points)
     e_array[0]=0#Due to the specific BCs
@@ -103,4 +103,5 @@ for time_iter in Time_Iter_list:
     plt.show()
 
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
 
