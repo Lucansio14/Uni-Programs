@@ -96,12 +96,9 @@ for time_iter in Time_Iter_list:
     plt.plot(x_array,u_array[time_iter],label='Numerical')
     plt.xlabel("$x$")
     plt.ylabel("$u(x,t)$")
-    plt.title(f'Comparison between analytical and numerical solutions for $t={time_iter}dt$')
+    plt.title(f'Comparison between analytical and numerical solutions for $t={time_iter}$dt')
     plt.legend()
     plt.grid()
     plt.tight_layout()
     plt.show()
-
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
-
-
