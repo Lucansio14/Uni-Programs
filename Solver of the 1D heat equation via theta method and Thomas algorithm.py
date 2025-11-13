@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Oct 28 11:02:55 2021
-Solver of the 1D parabolic diffusion Parcial Derivative Equation (PDE) or the 1D heat equation (with diffusivity constant equal to 1): u_t = u_xx using the theta
-method and Thomas algorithm in the region [x0,xf] in the x-axis with boundary conditions (BCs) u(t,x0) = u(t,xf) = 0 and initial condition u(t0,x) = u0(x).
+Solver of the 1D parabolic diffusion Parcial Derivative Equation (PDE) or the 1D heat equation (with diffusivity constant equal to 1): u_t = u_xx using the theta method
+and Thomas algorithm in the region [x0,xf] in the x-axis with Dirichlet boundary conditions (BCs) u(t,x0) = u(t,xf) = 0 and initial condition u(t0,x) = u0(x).
 More information on these websites: https://en.wikipedia.org/wiki/Heat_equation
                                     https://leifh.folk.ntnu.no/teaching/tkt4140/._main065.html
                                     https://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm
@@ -103,3 +103,4 @@ for time_iter in Time_Iter_list:
     plt.show()
 
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
