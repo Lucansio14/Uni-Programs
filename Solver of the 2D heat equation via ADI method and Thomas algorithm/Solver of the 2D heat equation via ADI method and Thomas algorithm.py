@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 start_time_program=time.process_time()#To calculate the program execution time
 #Definition of variables, constants, functions, arrays and lists
 End_Time_Iter=200#Last time step (dt) iteration
-Num_iter_shown=10#Number of time step (dt) iterations represented in the plots (NOT COUNTING t=0dt)
+Num_iter_shown=10#Number of time step (dt) iterations represented in the plots (NOT COUNTING t=0dt). Must be a multiple of the value of End_Time_Iter.
 Time_Iter_array=np.linspace(0,End_Time_Iter,Num_iter_shown+1)#Each time step (dt) iteration represented in the plots
 x0=0
 y0=0
@@ -86,3 +86,4 @@ while Time_Iter<=End_Time_Iter:
     u0_array=u_array
     Time_Iter+=1
 print("Program execution time:",time.process_time()-start_time_program,"seconds.")
+
