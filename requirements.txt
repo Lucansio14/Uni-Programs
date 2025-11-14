@@ -21,6 +21,6 @@ pyparsing==3.2.3
 pytensor==2.35.1
 python-dateutil==2.9.0.post0
 scipy==1.15.3
-simpy==4.1.1
+simpy==1.13.3
 six==1.17.0
 tqdm==4.67.1
