@@ -59,7 +59,7 @@ P_obs_matrix=np.transpose(P_obs_T_matrix)
 alpha_array=np.dot(np.dot(np.linalg.inv((np.dot(P_obs_matrix,P_obs_T_matrix))),P_obs_matrix),value_array)#Computation of the polynomial coefficients (alpha)
 inter_values_array=np.dot(P_g_T_matrix,alpha_array)#Computation of the matrix of interpolated values
 point_values_array=np.dot(P_obs_T_matrix,alpha_array)#Computation of the matrix of point/data values
-inter_values_matrix=np.reshape(inter_values_array,(len(Y_g_array),len(X_g_array)))#To obtain a matrix with the right shape for the plots
+inter_values_matrix=np.reshape(inter_values_array,(len(Y_g_array),len(X_g_array)))#To obtain a matrix with the right shape for the plot
 #Plot and error results
 if abs(np.min(value_array))>abs(np.max(value_array)):#Color normalization
     m=-np.min(value_array)
