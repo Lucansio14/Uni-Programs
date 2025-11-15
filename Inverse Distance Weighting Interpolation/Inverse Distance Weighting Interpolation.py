@@ -56,8 +56,8 @@ if abs(np.min(value_array))>abs(np.max(value_array)):#Color normalization
     m=-np.min(value_array)
 else:
     m=np.max(value_array)
-color_levels=np.arange(-int(m*10)/10,int(m*10)/10+0.1,0.1)#For the data point colors
-norm=mcolors.BoundaryNorm(boundaries=color_levels,ncolors=256)#For the data point colors
+color_levels=np.arange(-int(m*10)/10,int(m*10)/10+0.1,0.1)#For the data/point colors
+norm=mcolors.BoundaryNorm(boundaries=color_levels,ncolors=256)#For the data/point colors
 fig,ax=plt.subplots(figsize=(11,7))
 graph=ax.contourf(X_g_array,Y_g_array,weighted_average_values_matrix,levels=color_levels,cmap="seismic")
 ax.scatter(X_array,Y_array,c=value_array,s=30,norm=norm,cmap="seismic")
