@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Feb 25 09:46:14 2025
-Polynomial interpolation using a polynomial of arbitrary order n and previously available or observed data..
+Polynomial interpolation using a polynomial of arbitrary order n and previously available or observed data.
 More information on this website: https://en.wikipedia.org/wiki/Polynomial_interpolation
 @author: Lucas Romero Fernández
 """
