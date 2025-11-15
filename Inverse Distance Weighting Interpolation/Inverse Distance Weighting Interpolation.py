@@ -50,7 +50,7 @@ for i in range(0,len(X_g_matrix_resh)):
 for i in range(0,len(Omega_T)):
     Omega_T[i,:]=Omega_T[i,:]/np.sum(Omega_T[i,:])#Normalization of Omega^T (with the condition that the sum of the elements of each row = 1)
 weighted_average_values_array=np.dot(Omega_T,value_array)#Computation of the matrix of weighted average values
-weighted_average_values_matrix=np.reshape(weighted_average_values_array,(len(Y_g_array),len(X_g_array)))#To obtain a matrix with the right shape for the plots
+weighted_average_values_matrix=np.reshape(weighted_average_values_array,(len(Y_g_array),len(X_g_array)))#To obtain a matrix with the right shape for the plot
 #Plot
 if abs(np.min(value_array))>abs(np.max(value_array)):#Color normalization
     m=-np.min(value_array)
