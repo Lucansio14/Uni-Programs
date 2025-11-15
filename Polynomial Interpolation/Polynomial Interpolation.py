@@ -70,7 +70,7 @@ norm=mcolors.BoundaryNorm(boundaries=color_levels,ncolors=256)#For the data/poin
 fig,ax=plt.subplots(figsize=(11,7))
 graph=ax.contourf(X_g_array,Y_g_array,inter_values_matrix,levels=color_levels,cmap="seismic")
 ax.scatter(X_array,Y_array,c=value_array,s=30,norm=norm,cmap="seismic")
-ax.set(title=f'Polynomical Interpolation of order $n$ = ${n}$',xlabel="$X$ [km]",ylabel="$Y$ [km]")
+ax.set(title=f'Polynomical interpolation of order $n$ = ${n}$',xlabel="$X$ [km]",ylabel="$Y$ [km]")
 fig.colorbar(graph)
 ax.grid()
 fig.set_tight_layout(True)
