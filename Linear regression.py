@@ -17,7 +17,7 @@ x_array=np.array([0.79,1.05,1.57,1.83,2.09,2.36])#Example data for x
 err_x=0.09#Error bar value for x
 y_array=np.array([0.022,0.031,0.039,0.048,0.056,0.062])#Example data for y
 err_y=0.003#Error bar value for y
-#Linear regresion method
+#Linear regression method
 sample_size=x_array.size
 mean_x=x_array.mean()
 mean_y=y_array.mean()
