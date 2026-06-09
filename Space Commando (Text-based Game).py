@@ -283,7 +283,7 @@ def RedFoxEncounter(c,p,s,Meds):
                 print("Player roll:",float(0.4+c))
                 print("")
             if x<float(0.4+c):
-                print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, iniciating a fight to the death that lasts minutes, ending in a struggle where you emerge victorious by desarming and stabbing Red Fox in the neck. After that, you pause for a second to recompose yourself.")
+                print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, iniciating a fight to the death that lasts minutes, ending in a struggle where you emerge victorious by disarming and stabbing Red Fox in the neck. After that, you pause for a second to recompose yourself.")
                 break
             else:
                 print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, iniciating a fight that lasts minutes, ending in a struggle that you lose, getting severely stabbed. ")
@@ -489,7 +489,7 @@ while True:
         lw+=1
         print("Context: You are a rookie special agent recently hired by the Espionage Space Agency (ESA) to infiltrate the USS Horizon to steal documents of vital importance to the ESA and the human colony on Mars as your first real mission.")
         print("")
-        print("Your mission will not be easy, the USS Horizon is well guarded, there are armed Tarkanian guards spread through out the ship, but the most dangerous is its captain, Red Fox, a ruthless being capable of anything to reach his plans for universal domination.")
+        print("Your mission will not be easy, the USS Horizon is well guarded, there are armed Tarkanian guards spread throughout the ship, but the most dangerous is its captain, Red Fox, a ruthless being capable of anything to reach his plans for universal domination.")
         print("")
         print("How you complete your mission is up to you, do whatever is necessary to steal those documents and if possible, take down Red Fox in a subtle and inadvertent way, Red Fox is a nuisance for the ESA but you cannot risk compromising the agency.")
         print("")
