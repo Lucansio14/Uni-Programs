@@ -628,7 +628,7 @@ if Meds!=0:
 print("*******************ACHIEVEMENTS UNLOCKED************************")
 print("")
 Tot_Ach=7
-print("Achievement unlocked: Simulated Universe Savior -> Simulation completed.")
+print("Simulated Universe Savior -> Simulation completed.")
 print("")
 if DumbMeter>4 and DumbMeter<10:
     print("Wake-up call -> You have changed your attitude.")
