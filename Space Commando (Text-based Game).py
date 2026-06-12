@@ -55,7 +55,7 @@ def Stealth(s):
         return [v,s]
 def InfiltrationEncounter(c,p,s):
     while True:
-        question="How do you want to do inflitrate (*f*,*p* or *s*)? "
+        question="How do you want to infiltrate (*f*,*p* or *s*)? "
         answer=input(question)
         print("")
         if answer=="f":
