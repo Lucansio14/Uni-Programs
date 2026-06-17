@@ -10,12 +10,12 @@ import sys
 import time
 import matplotlib.pyplot as plt
 #Definition of options variables and functions of the different scenarios of the game
-NumOptions=0#To show the 'dice rolls'/numbers generated of the player and enemies in encounters
+NumOptions=False#To show the 'dice rolls'/numbers generated of the player and enemies in encounters
 def Persuasion(p):
     x=random()
-    y="You are good at getting what you want with diplomacy, you are a very eloquent person (+30 Persuasion)."
-    z="You are terrible at persuading people, you never get what you want by talking (-30 Persuasion)."
-    v="You are not known for your persuasion skills (your Persuasion skill is not affected)."
+    y="You are good at getting what you want through diplomacy; you are a very eloquent person (+30 Persuasion --> +0.3 on the Persuasion dice rolls)."
+    z="You are terrible at persuading people; you never get what you want by talking (-30 Persuasion --> -0.3 on the Persuasion dice rolls)."
+    v="You are not known for your persuasive skills (your Persuasion skill is not affected)."
     if x>0.66:
         p=0.3
         return [y,p]
@@ -27,9 +27,9 @@ def Persuasion(p):
         return [v,p]
 def Combat(c):
     x=random()
-    y="You are a master of hand-to-hand combat and all types of guns, including spacecraft weaponry, a complete killing machine (+30 Combat)."
-    z="You are weak, clumsy and leaden, you are not made for any type of physical confrontation or learning about combat technology (-30 Combat)."
-    v="Your combat prowess in all fields is like that of any beginner special agent, it does not stand out (your Combat skill is not affected)."
+    y="You are a master of hand-to-hand combat and all types of guns, including spacecraft weaponry, a complete killing machine (+30 Combat --> +0.3 on the Combat dice rolls)."
+    z="You are weak, clumsy and leaden; you are not made for any type of physical confrontation or learning about combat technology (-30 Combat --> -0.3 on the Combat dice rolls)."
+    v="Your combat prowess in all fields is comparable to that of any beginner special agent; it does not stand out (your Combat skill is not affected)."
     if x>0.66:
         c=0.3
         return [y,c]
@@ -41,8 +41,8 @@ def Combat(c):
         return [v,c]
 def Stealth(s):
     x=random()
-    y="You are very good at hiding and going unnoticed, you are like a shadow in the night (+30 Stealth)."
-    z="They hear you from miles away and even the blind can see you, it is clear that stealth is not your forte (-30 Stealth)."
+    y="You are very good at hiding and going unnoticed; you are like a shadow in the night (+30 Stealth --> +0.3 on the Stealth dice rolls)."
+    z="They hear you from miles away and even the blind can see you; it is clear that stealth is not your forte (-30 Stealth --> -0.3 on the Stealth dice rolls)."
     v="You're not an ace at stealth but you're not terrible either (your Stealth skill is not affected)."
     if x>0.66:
         s=0.3
@@ -60,44 +60,44 @@ def InfiltrationEncounter(c,p,s):
         print("")
         if answer=="f":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.4+c))
                 print("")
             if x<float(0.4+c):
-                print("You decide to confront things head-on, disabling the comms of the ship with the exterior before dispatching quickly one by one every small attack ship of the USS Horizon. With the coast clear, you enter the USS Horizon ship itself.")
+                print("You decide to confront things head-on, disabling the comms of the ship from the exterior before quickly dispatching one by one every small attack ship of the USS Horizon. With the coast clear, you enter the USS Horizon ship itself.")
                 break
             else:
-                print("You fail to disable the ship's comms in a hasty attack to the ship. You are quickly surrounded and destroyed.")
+                print("You fail to disable the ship's comms in a hasty attack on the ship. You are quickly surrounded and destroyed.")
                 print("")
                 sys.exit("GAME OVER. Reason: Subject has died.")
         elif answer=="p":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.4+p))
                 print("")
             if x<float(0.4+p):
-                print("You approach the ship in a normal manner, getting contacted via intercom by the, especially lazy and uninterested, ship's personnel. You masterfully persuade them that you are a new technician for the ship (fake ID and all) and that you were late due to family business and problems with this personal spacecraft, they are convinced by that and let you through. You enter the ship unimpeded.")
+                print("You approach the ship in a normal manner, getting contacted via intercom by the especially lazy and uninterested ship's personnel. You masterfully persuade them that you are a new technician for the ship (fake ID and all) and that you were late due to family business and problems with your personal spacecraft. They are convinced by that and let you through. You enter the ship unimpeded.")
                 break
             else:
-                print("They are not convinced by your lies, you try to escape but small fighter ships destroy your propulsion systems. With an evil intent, they let you to die in your now disabled and helpless ship.")
+                print("They are not convinced by your lies; you try to escape, but small fighter ships destroy your propulsion systems. With an evil intent, they let you die in your now disabled and helpless ship.")
                 print("")
                 sys.exit("GAME OVER. Reason: Subject lost in space.")
         elif answer=="s":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.4+s))
                 print("")
             if x<float(0.4+s):
-                print("You activate the invisibility shield and radar inhibitors in your ship, skillfully dodging the small fighter ships patrols detection fields. After you surpass all the patrols, you enter the USS Horizon ship itself.")
+                print("You activate the invisibility shield and radar inhibitors in your ship, skillfully dodging the small fighter ship's patrol detection fields. After you surpass all the patrols, you enter the USS Horizon ship itself.")
                 break
             else:
-                print("You activate the invisibility shield and radar inhibitors in your ship, but you are not able to dodge the detection fields of the patrols, they discover you and get shoot down.")
+                print("You activate the invisibility shield and radar inhibitors in your ship, but you are not able to dodge the detection fields of the patrols; they discover you and shoot you down.")
                 print("")
                 sys.exit("GAME OVER. Reason: Subject has died.")
         else:
@@ -127,65 +127,65 @@ def Encounters(c,p,s,Meds):
         print("")
         if answer=="f":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.3+c))
                 print("")
             if x<float(0.3+c):
-                print("You successfully neutralize the threats, they never stood a chance.")
+                print("You successfully neutralize the threats; they never stood a chance.")
                 break
             else:
-                print("You fail to incapacitate them in time before they discover you, they shoot you and wound you.")
+                print("You fail to incapacitate them in time before they discover you; they shoot you and wound you.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission.")
                     print("")
                     sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
-                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation altogether.")
+                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation entirely.")
                     Meds+=-1
                     break
         elif answer=="p":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.3+p))
                 print("")
             if x<float(0.3+p):
-                print("You talk your way through and convince them that you are the ship's new superluminal engine technician, you do not know if that position really exists, but they believe it and let you pass.")
+                print("You talk your way through and convince them that you are the ship's new superluminal engine technician. You do not know if that position really exists, but they believe it and let you pass.")
                 break
             else:
-                print("They see through your bluff, they start shooting, wounding you in the process.")
+                print("They see through your bluff; they start shooting, wounding you in the process.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission.")
                     print("")
                     sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
-                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation altogether.")
+                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation entirely.")
                     Meds+=-1
                     break
         elif answer=="s":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.3+s))
                 print("")
             if x<float(0.3+s):
-                print("You go unnoticed and escape from the room without them noticing your presence, like a good space spy.")
+                print("You go unnoticed and escape from the room without them realizing your presence, like a good space spy.")
                 break
             else:
-                print("They discover you while you are trying to get away from the situation, lasers rain down on you. You pray that one does not hit you, but you get shot anyway.")
+                print("They discover you while you are trying to get away from the situation; lasers rain down on you. You pray that one does not hit you, but you get shot anyway.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission.")
                     print("")
                     sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
-                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation altogether.")
+                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation entirely.")
                     Meds+=-1
                     break
         else:
@@ -200,65 +200,65 @@ def DoorCommandRoomEncounter(c,p,s,Meds):
         print("")
         if answer=="f":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.3+c))
                 print("")
             if x<float(0.3+c):
-                print("You cause a small noise near them and while they are distracted, you rush them and quickly incapacitate the three of them, taking them by surprise. You are a little bit surprised by how well that went.")
+                print("You create a small noise near them, and while they are distracted, you rush in and quickly incapacitate all three, catching them by surprise. You are a little bit surprised by how well that went.")
                 break
             else:
-                print("You try to rush them while they seem specially distracted bickering between each other, but the numbers advantage quickly makes its presence known and you are shoot and wounded.")
+                print("You try to rush them while they seem especially distracted bickering between each other, but the numerical advantage quickly makes its presence known, and you are shot and wounded.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission.")
                     print("")
                     sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
-                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation altogether.")
+                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation entirely.")
                     Meds+=-1
                     break
         elif answer=="p":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.3+p))
                 print("")
             if x<float(0.3+p):
-                print("You discover a ship's crew suit left behind nearby, you put it on and you approach the guards in a hurry, convincing them that a catastrophic failure in the black hole engine has occurred and that assistance is needed. In the turmoil of the moment, you stay behind to 'warn' the captain...")
+                print("You discover a ship's crew suit left behind nearby. You put it on and you approach the guards in a hurry, convincing them that a catastrophic failure in the black hole engine has occurred and that assistance is needed. In the turmoil of the moment, you stay behind to 'warn' the captain...")
                 break
             else:
-                print("They see through your bluff by recognizing that your face and way of talking does not ressemble any of the crew members of the ship, you try to escape the situation but they start shooting, wounding you in the process.")
+                print("They see through your bluff by recognizing that your face and way of talking do not resemble any of the crew members of the ship. You try to escape the situation, but they start shooting, wounding you in the process.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission.")
                     print("")
                     sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
-                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation altogether.")
+                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation entirely.")
                     Meds+=-1
                     break
         elif answer=="s":
             x=random()
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Enemies roll:",x)
                 print("")
                 print("Player roll:",float(0.3+s))
                 print("")
             if x<float(0.3+s):
-                print("You sabotage the wiring and machinery of a nearby room, causing a huge racket and gaining their attention in the process. You sneak past them while they are investigating the noise and arrive undetected to the door.")
+                print("You sabotage the wiring and machinery of a nearby room, causing a huge racket and gaining their attention in the process. You sneak past them while they are investigating the noise and arrive undetected at the door.")
                 break
             else:
-                print("You produce a considerable noise distraction nearby but you are discovered while you are trying to sneak past to the door, you make a run to the door but you get shot before you get to it.")
+                print("You produce a considerable noise, causing a distraction nearby, but you are discovered while you are trying to sneak past to the door. You make a run for the door, but you get shot before reaching it.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission.")
                     print("")
                     sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
-                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation altogether.")
+                    print("You manage to hide and heal yourself with the medicine you have and, luckily, escape the situation entirely.")
                     Meds+=-1
                     break
         else:
@@ -269,7 +269,7 @@ def DoorCommandRoomEncounter(c,p,s,Meds):
 def RedFoxEncounter(c,p,s,Meds):
     print("You encounter Captain Red Fox!")
     print("")
-    print("Red Fox seems to not have noticed your presence yet...")
+    print("Red Fox seems not to have noticed your presence yet...")
     print("")
     while True:
         question="What do you want to do (*f*,*p* or *s*)? "
@@ -277,49 +277,45 @@ def RedFoxEncounter(c,p,s,Meds):
         print("")
         if answer=="f":
             x=random()+0.15
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Red Fox roll:",x)
                 print("")
                 print("Player roll:",float(0.4+c))
                 print("")
             if x<float(0.4+c):
-                print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, iniciating a fight to the death that lasts minutes, ending in a struggle where you emerge victorious by disarming and stabbing Red Fox in the neck. After that, you pause for a second to recompose yourself.")
+                print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, initiating a fight to the death that lasts minutes, ending in a struggle where you emerge victorious by disarming and stabbing Red Fox in the neck. After that, you pause for a second to recompose yourself.")
                 break
             else:
-                print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, iniciating a fight that lasts minutes, ending in a struggle that you lose, getting severely stabbed. ")
+                print("While Red Fox seems distracted, you vault over the command table and attack Red Fox, initiating a fight that lasts minutes, ending in a struggle that you lose, getting severely stabbed.")
                 print("")
                 if Meds==0:
-                    print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
-                    print("")
-                    sys.exit("GAME OVER. Reason: Subject has died.")
+                    print("You have no medicine to patch you up; you bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
                 else:
                     print("When you are about to heal yourself with medicine, Red Fox kicks it away. You bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
-                    print("")
-                    sys.exit("GAME OVER. Reason: Subject has died.")
+                print("")
+                sys.exit("GAME OVER. Reason: Subject has died.")
         elif answer=="p":
             x=random()+0.2
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Red Fox roll:",x)
                 print("")
                 print("Player roll:",float(0.4+p))
                 print("")
             if x<float(0.4+p):
-                print("You miraculously convince Red Fox that you are an ally, betraying the ESA by joining the crew in the USS Horizon. After a while, when you are given your own combat knife and Red Fox is distracted, you murder him in cold blood.")
+                print("You miraculously convince Red Fox that you are an ally, betraying the ESA by joining the crew of the USS Horizon. After a while, when you are given your own combat knife and Red Fox is distracted, you murder him in cold blood.")
                 break
             else:
-                print("Red Fox sees through your lies and persuasion without you noticing it. Nevertheless, Red Fox goes along with it and when you think you are safe, Red Fox stabs you in the stomach.")
+                print("Red Fox sees through your lies and persuasion without you noticing it. Nevertheless, Red Fox goes along with it, and when you think you are safe, Red Fox stabs you in the stomach.")
                 print("")
                 if Meds==0:
                     print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
-                    print("")
-                    sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
                     print("When you are about to heal yourself with medicine, Red Fox kicks it away. You bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
-                    print("")
-                    sys.exit("GAME OVER. Reason: Subject has died.")
+                print("")
+                sys.exit("GAME OVER. Reason: Subject has died.")
         elif answer=="s":
             x=random()-0.1
-            if NumOptions==1:
+            if NumOptions==True:
                 print("Red Fox roll:",x)
                 print("")
                 print("Player roll:",float(0.4+s))
@@ -328,16 +324,14 @@ def RedFoxEncounter(c,p,s,Meds):
                 print("You sneak behind and take the knife of Red Fox out of the sheath. Then, you cut the calf muscles and stab beneath the chin, killing Red Fox in the process.")
                 break
             else:
-                print("You sneak behind and try to take the knife that Red Fox has. Unfortunately, Red Fox hears you and unsheathes the knife at lightning speed, trying to end your life with a single cut to the neck. you try to block it but it is too fast...")
+                print("You sneak behind and try to take the knife that Red Fox has. Unfortunately, Red Fox hears you and unsheathes the knife at lightning speed, trying to end your life with a single cut to the neck. You try to block it but it is too fast...")
                 print("")
                 if Meds==0:
                     print("You have no medicine to patch you up, you bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
-                    print("")
-                    sys.exit("GAME OVER. Reason: Subject has died.")
                 else:
                     print("When you are about to heal yourself with medicine, Red Fox kicks it away. You bleed to death aboard the USS Horizon, without having completed your mission. The last thing you see and hear is Red Fox laughing evilly.")
-                    print("")
-                    sys.exit("GAME OVER. Reason: Subject has died.")
+                print("")
+                sys.exit("GAME OVER. Reason: Subject has died.")
         else:
             print("You have to type *f*,*p* or *s* to choose between fighting, persuading or sneaking past, respectively: ")
             print("")
@@ -369,9 +363,9 @@ def Places2(x):
         return v
 def Objects1(x):
     x=random()
-    y="an untagged GunTek1000 plasma pistol (+15 Combat)."
-    z="a cutting-edge Tarkanian combat knife (+10 Combat)."
-    v="a book on the art of diplomacy (+10 Persuasion)."
+    y="an untagged GunTek1000 plasma pistol (+15 Combat --> +0.15 on the Combat dice rolls)."
+    z="a cutting-edge Tarkanian combat knife (+10 Combat --> +0.1 on the Combat dice rolls)."
+    v="a book on the art of diplomacy (+10 Persuasion --> +0.1 on the Persuasion dice rolls)."
     l="nothing particularly useful."
     if x>0.90:
         r=0.15
@@ -386,9 +380,9 @@ def Objects1(x):
         return v,0,d,0
 def Objects2(x):
     x=random()
-    y="a drug called -100% Space Politician-, you've heard of it, it's supposed to make you more elocuent (+10 Persuasion)."
-    z="a ship's guard suit (+10 Stealth)."
-    v="a small device called -Stealth Boy-, apparently it makes you invisible for a short time (+20 Stealth)."
+    y="a drug called '100% Space Politician'. You've heard of it; it's supposed to make you more eloquent (+10 Persuasion --> +0.1 on the Persuasion dice rolls)."
+    z="a ship's guard suit (+10 Stealth --> +0.1 on the Stealth dice rolls)."
+    v="a small device called 'Stealth Boy', apparently it makes you invisible for a short time (+20 Stealth --> +0.2 on the Stealth dice rolls)."
     l="nothing particularly useful."
     if x>0.90:
         a=0.2
@@ -403,9 +397,9 @@ def Objects2(x):
         return y,0,b,0
 def Objects3(x):
     x=random()
-    y="a bunch of untagged plasma grenades, very effective in combat scenarios (+10 Combat)."
-    z="a book on how to go unnoticed by the naked eye (+10 Stealth)."
-    v="a wad of space euros, useful for bribing guards (+15 Persuasion)."
+    y="a bunch of untagged plasma grenades, very effective in combat scenarios (+10 Combat --> +0.1 on the Combat dice rolls)."
+    z="a book on how to go unnoticed by the naked eye (+10 Stealth --> +0.1 on the Stealth dice rolls)."
+    v="a wad of space euros, useful for bribing guards (+15 Persuasion --> +0.15 on the Persuasion dice rolls)."
     l="nothing particularly useful."
     if x>0.90:
         n=0.15
@@ -420,22 +414,22 @@ def Objects3(x):
         return y,i,0,0
 #main_program
 #Introduction
-print("Hello! Welcome to my game SPACE COMMANDO, I am writing this to give you a few instructions that can help you during the game:")
+print("Hello! Welcome to my game SPACE COMMANDO. I am writing this to give you a few instructions that can help you during the game:")
 print("")
 print("1-SPACE COMMANDO is a game where luck and randomness are important factors, so there will be playthroughs where everything seems lost and unfair.")
 print("")
-print("2-Each playthrough you play will be different because randomness is a fundamental part of the game, every time you play the map will change, your objects will change, etc... All this to always give an -unique- experience each time you play.")
+print("2-Each playthrough you experience will be different because randomness is a fundamental part of the game. Every time you play, the map will change, your objects will change, etc. All this is designed to provide a 'unique' experience each time you play.")
 print("")
-print("3-The game mechanics are simple, when you encounter a tricky situation, you will have three options, fight, persuade or sneak past. To choose them, you just have to write *f*, *p* or *s*, respectively.")
+print("3-The game mechanics are simple. When you encounter a tricky situation, you will have three options: fight, persuade or sneak past. To choose them, you just have to write *f*, *p* or *s*, respectively.")
 print("")
-print("4-This game is not permissive and there are no checkpoints, it ends when you are injured and you don't have medicine or when you complete your mission and escape alive.")
+print("4-This game is not permissive, and there are no checkpoints. It ends when you are injured and do not have medicine or when you complete your mission and escape alive.")
 print("")
 print("5-Different actions in the game can unlock achievements. Try to get them all!")
 print("")
-question="First of all, type *1* in the terminal if you want to see the 'dice rolls'/numbers generated of the player and enemies in encounters: "
+question="First of all, type *1* in the terminal if you want to see the 'dice rolls'/numbers generated for the player and enemies in encounters: "
 answer=input(question)
 if answer=="1":
-    NumOptions=1
+    NumOptions=True
 print("")
 question="Now, when you are ready to start the game, just type *i* in the terminal: "
 answer=input(question)
@@ -451,11 +445,11 @@ while True:
             lw+=1
         print("Context: You are a rookie special agent recently hired by the Espionage Space Agency (ESA) to infiltrate the USS Horizon to steal documents of vital importance to the ESA and the human colony on Mars as your first real mission.")
         print("")
-        print("Your mission will not be easy, the USS Horizon is well guarded, there are armed Tarkanian guards spread through out the ship, but the most dangerous is its captain, Red Fox, a ruthless being capable of anything to reach his plans for universal domination.")
+        print("Your mission will not be easy. The USS Horizon is well guarded; there are armed Tarkanian guards spread throughout the ship. But the most dangerous is its captain, Red Fox, a ruthless being capable of anything to achieve his plans for universal domination.")
         print("")
-        print("How you complete your mission is up to you, do whatever is necessary to steal those documents and if possible, take down Red Fox in a subtle and inadvertent way, Red Fox is a nuisance for the ESA but you cannot risk compromising the agency.")
+        print("How you complete your mission is up to you; do whatever is necessary to steal those documents and, if possible, take down Red Fox in a subtle and inadvertent way. Red Fox is a nuisance for the ESA but you cannot risk compromising the agency.")
         print("")
-        print("You will be sent alone and unarmed, they cannot provide you with equipment due to lack of time and personnel, you will have to use your ingenuity and what you find to achieve your objective. Remember that the ranged weapons of the Tarkanian guards while on patrol are DNA-tagged and can only be used by themselves, you will have to find untagged ones.")
+        print("You will be sent alone and unarmed; they cannot provide you with equipment due to lack of time and personnel. You will have to use your ingenuity and what you find to achieve your objective. Remember that the ranged weapons of the Tarkanian guards while on patrol are DNA-tagged and can only be used by them. You will have to find untagged ones.")
         print("")
         question="Ready to begin the mission? "
         answer=input(question)
@@ -464,12 +458,12 @@ while True:
             print("That's the spirit!")
             print("")
             q=1
-            print("Achievement unlocked: Positivity -> Always yes to everything.")
+            print("Achievement unlocked: Positivity -> Always say yes to everything.")
             print("")
             lw+=1
         else:
             q=0
-            print("Ready or not, it does not matter, there is no time to spare.")
+            print("Ready or not, it does not matter; there is no time to spare.")
             print("")
         print("Good luck, agent.")
         print("")
@@ -481,19 +475,19 @@ while True:
             print("Achievement unlocked: Wake-up call -> You have changed your attitude.")
             print("")
             lw+=1
-        print("You are really eager to start, good...")
+        print("You are really eager to start; good...")
         w=1
         print("")
-        print("Achievement unlocked: Eager to play -> Be complimented for your impatience at the beginning of the game.")
+        print("Achievement unlocked: Eager to play -> Be complimented for your impatience at the start of the game.")
         print("")
         lw+=1
         print("Context: You are a rookie special agent recently hired by the Espionage Space Agency (ESA) to infiltrate the USS Horizon to steal documents of vital importance to the ESA and the human colony on Mars as your first real mission.")
         print("")
-        print("Your mission will not be easy, the USS Horizon is well guarded, there are armed Tarkanian guards spread throughout the ship, but the most dangerous is its captain, Red Fox, a ruthless being capable of anything to reach his plans for universal domination.")
+        print("Your mission will not be easy. The USS Horizon is well guarded; there are armed Tarkanian guards spread throughout the ship. But the most dangerous is its captain, Red Fox, a ruthless being capable of anything to achieve his plans for universal domination.")
         print("")
-        print("How you complete your mission is up to you, do whatever is necessary to steal those documents and if possible, take down Red Fox in a subtle and inadvertent way, Red Fox is a nuisance for the ESA but you cannot risk compromising the agency.")
+        print("How you complete your mission is up to you; do whatever is necessary to steal those documents and, if possible, take down Red Fox in a subtle and inadvertent way. Red Fox is a nuisance for the ESA but you cannot risk compromising the agency.")
         print("")
-        print("You will be sent alone and unarmed, they cannot provide you with equipment due to lack of time and personnel, you will have to use your ingenuity and what you find to achieve your objective.")
+        print("You will be sent alone and unarmed; they cannot provide you with equipment due to lack of time and personnel. You will have to use your ingenuity and what you find to achieve your objective.")
         print("")
         question="Ready to begin the game? "
         answer=input(question)
@@ -502,11 +496,11 @@ while True:
             print("That's the spirit!")
             print("")
             q=1
-            print("Achievement unlocked: Positivity -> Always yes to everything.")
+            print("Achievement unlocked: Positivity -> Always say yes to everything.")
             print("")
             lw+=1
         else:
-            print("Ready or not, it does not matter, there is no time to spare.")
+            print("Ready or not, it does not matter; there is no time to spare.")
             print("")
         print("Good luck, agent.")
         print("")
@@ -521,16 +515,16 @@ while True:
             print("Are you dumb?")
             print("")
         if DumbMeter==10:
-            print("Understood, if you are going to be a nuisance, it is better for you to not proceed.")
+            print("Understood. If you are going to be a nuisance, it is better for you not to proceed.")
             print("")
-            sys.exit("GAME OVER. Reason: Subject stupidness.")
+            sys.exit("GAME OVER. Reason: Subject stupidity.")
 #The game proper
 t1=time.time()
-print("On the way to the ship, you wonder why they have entrusted such an important mission to a beginner like you and why they hired you in the first place, you have not done any type of training or preparation with them before this.")
+print("On the way to the ship, you wonder why they have entrusted such an important mission to a beginner like you and why they hired you in the first place. You have not done any type of training or preparation with them before this.")
 print("")
-print("From what you could hear and find out, apparently they have been observing you for some time and have seen that you have a lot of potential to be a good spy, although you can't come up with an explanation as to why this is so.")
+print("From what you can hear and find out, apparently, they have been observing you for some time and have seen that you have a lot of potential to be a good spy, although you can't come up with an explanation as to why this is so.")
 print("")
-print("You have safely arrived at the position of the USS Horizon, now you have to find a way to infiltrate the ship...")
+print("You have safely arrived at the position of the USS Horizon; now you have to find a way to infiltrate the ship...")
 print("")
 print("Before trying anything with your small infiltration ship, you decide to give a quick check on your most important skills as a spy:")
 print("")
@@ -545,10 +539,10 @@ print("3-",s[0])
 print("")
 InfiltrationEncounter(c[1],p[1],s[1])
 print("")
-print("In the landing zone, you luckily find medicine, this will heal you up, in case you are physically injured.")
+print("In the landing zone, you luckily find medicine; this will heal you up, in case you are physically injured.")
 Meds=1
 print("")
-print("When you leave undetected the mostly lifeless landing zone, you find yourself in",LandingZone(0))
+print("When you leave undetected from the mostly lifeless landing zone, you find yourself in",LandingZone(0))
 print("")
 Object1=Objects1(0)
 print("You search the room and find",Object1[0])
@@ -560,9 +554,9 @@ Meds=Encounters(c[1],p[1],s[1],Meds)
 print("")
 print("Medicine left =",Meds)
 print("")
-print("You continue moving through the ship in search of the command room, where you assume the documents you are looking for will be and with a little luck, captain Red Fox himself.")
+print("You continue moving through the ship in search of the command room, where you assume the documents you are looking for will be, and with a little luck, captain Red Fox himself.")
 print("")
-print("You open a door and enter",Places1(0))
+print("You open the door in front of you and enter",Places1(0))
 print("")
 Object2=Objects2(0)
 print("You search the room and find",Object2[0])
@@ -574,7 +568,7 @@ Meds=Encounters(c[1],p[1],s[1],Meds)
 print("")
 print("Medicine left =",Meds)
 print("")
-print("You feel that with every step you take, you get closer to the command room and your goals. You wonder why you don't meet more Tarkanian soldiers in the rooms you visit, it seems as if they are all in a specific place on the ship that you haven't found yet and that you hope not to find.")
+print("You feel that with every step you take, you get closer to the command room and your goals. You wonder why you don't meet more Tarkanian soldiers in the rooms you visit; it seems as if they are all in a specific place on the ship that you haven't found yet and that you hope not to find.")
 print("")
 print("You open the door in front of you and enter",Places2(0))
 print("")
@@ -588,7 +582,7 @@ Meds=Encounters(c[1],p[1],s[1],Meds)
 print("")
 print("Medicine left =",Meds)
 print("")
-print("You finally reach the command room, but there are three Tarkanian guards at the door, bickering between each other. You have to get rid of them somehow...")
+print("You finally reach the command room, but there are three Tarkanian guards at the door, bickering with each other. You have to get rid of them somehow...")
 print("")
 Meds=DoorCommandRoomEncounter(c[1],p[1],s[1],Meds)
 print("")
@@ -598,11 +592,11 @@ print("With the now unprotected door in front of you and a little grin on your f
 print("")
 RedFoxEncounter(c[1],p[1],s[1],Meds)
 print("")
-print("With Red Fox lying dead, you search for the important documents, finding them shortly afterwards. Following that, you leave the USS Horizon alive and well.")
+print("With Red Fox lying dead, you search for the important documents, finding them shortly afterward. Following that, you leave the USS Horizon alive and (mostly) well.")
 print("")
-print("**********************SIMULATION COMPLETED***************************")
+print("**********************EXITING SIMULATION***************************")
 print("")
-print("Well done, you have completed your training and initiation, welcome to ESA, Agent.")
+print("Well done, you have completed your training and initiation. Welcome to ESA, Agent.")
 print("")
 print("Achievement unlocked: Simulated Universe Savior -> Simulation completed.")
 print("")
@@ -634,7 +628,7 @@ if DumbMeter>4 and DumbMeter<10:
     print("Wake-up call -> You have changed your attitude.")
     print("")
 if q==1:
-    print("Positivity -> Always yes to everything.")
+    print("Positivity -> Always say yes to everything.")
     print("")
 if w==1:
     print("Eager to play -> Be complimented for your impatience at the beginning of the game.")
@@ -655,8 +649,8 @@ print("")
 if lw==Tot_Ach:
     print("Congratulations! You have completed all the achievements in Space Commando! You should feel proud of yourself and maybe a little bit worried.")
 else:
-    x=["A. Unlocked","A. Locked"]
-    y=[lw,Tot_Ach-lw]
+    x=["Unlocked","Total"]
+    y=[lw,Tot_Ach]
     fig,Ej0=plt.subplots(figsize=(6,6))
     Ej0.bar(x,y,align="center",width=0.7,alpha=1)
     Ej0.set_title("Achievements")
